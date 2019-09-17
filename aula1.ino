@@ -1,9 +1,13 @@
+#define amarelo 11
+#define vermelho 12
+#define verde 13
+
 int n;
 void setup()
 {
-  pinMode(11, OUTPUT); // amarelo
-  pinMode(12, OUTPUT); // vermelho
-  pinMode(13, OUTPUT); //verde 
+  pinMode(amarelo, OUTPUT);
+  pinMode(vermelho, OUTPUT);
+  pinMode(verde, OUTPUT);
   pinMode(2, INPUT);
 }
 
@@ -16,17 +20,17 @@ void loop()
     {
       n = (6000 - n) / 2;
     }
-    digitalWrite(13, LOW);
-    digitalWrite(12, LOW);
-    digitalWrite(13, HIGH);
+    digitalWrite(verde, LOW);
+    digitalWrite(vermelho, LOW);
+    digitalWrite(verde, HIGH);
     delay(1);
   }
-  digitalWrite(13, LOW);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, LOW);
+  digitalWrite(verde, LOW);
+  digitalWrite(amarelo, HIGH);
+  digitalWrite(vermelho, LOW);
   delay(1000);
-  digitalWrite(13, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, HIGH);
+  digitalWrite(verde, LOW);
+  digitalWrite(amarelo, LOW);
+  digitalWrite(vermelho, HIGH);
   delay(3000);
 }
