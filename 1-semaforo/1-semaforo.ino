@@ -15,12 +15,12 @@ void setup()
 void loop()
 {
   btn_press=0; /* reiniciar o estado do botão */
-  for (n = 6000; n > 0; n--)
+  for (n = 0; n < 6000; n++)
   {
     int botao = digitalRead(entrada_botao);
     if (botao == 1 && !btn_press)
     {
-      n = (6000 - n) / 2;
+      n += (6000 - n) / 2;
       btn_press=1;
     }
     digitalWrite(verde, LOW);
