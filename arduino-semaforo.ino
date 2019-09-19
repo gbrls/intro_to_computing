@@ -3,6 +3,7 @@
 #define verde 13
 #define entrada_botao 2
 int n;
+int btn_press=0; /* variavel para guardar se o botão ja foi pressionado */
 void setup()
 {
   pinMode(amarelo, OUTPUT);
@@ -13,12 +14,14 @@ void setup()
 
 void loop()
 {
+  btn_press=0; /* reiniciar o estado do botão */
   for (n = 6000; n > 0; n--)
   {
     int botao = digitalRead(entrada_botao);
-    if (botao == 1)
+    if (botao == 1 && !btn_press)
     {
       n = (6000 - n) / 2;
+      btn_press=1;
     }
     digitalWrite(verde, LOW);
     digitalWrite(vermelho, LOW);
@@ -33,4 +36,5 @@ void loop()
   digitalWrite(amarelo, LOW);
   digitalWrite(vermelho, HIGH);
   delay(3000);
+
 }
