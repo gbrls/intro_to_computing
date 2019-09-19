@@ -36,4 +36,7 @@ void loop()
   digitalWrite(amarelo, LOW);
   digitalWrite(vermelho, HIGH);
   delay(3000);
+  
+  btn_press=0;
+
 }
