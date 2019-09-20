@@ -16,7 +16,7 @@ void setup()
 }
 
 void loop()
-{                
+{
   // ACENDE O VERDE
   btn_press = 0; /* reiniciar o estado do botão */
   for (n = 0; n < TIME_VERDE; n++)
