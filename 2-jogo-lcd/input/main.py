@@ -1,4 +1,5 @@
-import os, pyxhook, serial
+import os, pyxhook
+import serial
 
 # TODO: saida serial p/o arduino
 
@@ -9,7 +10,7 @@ key_dict = {"Left": -1, "Right": 1,
 
 # Nenhum desses valores valem nada. São só placeholders
 port = "/dev/algumacoisa"
-ard_serial = serial.Serial(port, 9600,timeout=2)
+#ard_serial = serial.Serial(port, 9600,timeout=2)
 
 # Transformar a String da tecla em um comando entendivel pelo Arduino
 def EncodeKey(key):
@@ -21,7 +22,7 @@ def SendData(key):
     if encoded != None:
         print("Sending: {}".format(encoded))
         # TODO: não sei se isso funciona
-        ard_serial.write(str(encoded))
+        #ard_serial.write(str(encoded))
 
 # Função que será chamada quando uma tecla for pressionada
 def OnKeyPress(event):
